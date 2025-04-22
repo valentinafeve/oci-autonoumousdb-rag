@@ -16,9 +16,9 @@ END;
 
 ## 2. Vamos a crear el perfil de IA 
 
-Algunos links útiles 
+Algunos links útiles para el siguiente comando
 
-[Obtener mi compartment](https://cloud.oracle.com/identity/compartments?region=null)
+[Obtener mi compartment](https://cloud.oracle.com/identity/compartments)
 [Obtener mi región](https://cloud.oracle.com/regions)
 
 
@@ -34,10 +34,12 @@ BEGIN
                 "model": "meta.llama-3.3-70b-instruct",
                 "comments":"true"      
        }');                                                                  
-END;                                                                                                            ``` 
+END;                                                                                                          ```
+```
+
 
 ```sql
-SELECT DBMS_CLOUD_AI.GENERATE(prompt       => 'quién es el mejor jugador?',
+SELECT DBMS_CLOUD_AI.GENERATE(prompt => 'quién es el mejor jugador?',
 profile_name => 'GENAI',
 action       => 'narrate')
 FROM dual;
@@ -45,10 +47,13 @@ FROM dual;
 
 ## Algunos comandos útiles
 
+Borrar las credenciales, creadas, esto es útil para volver a crear las credenciales de nuevo.
+
 ```sql
 EXEC DBMS_CREDENTIAL.DROP_CREDENTIAL('GENAI_CRED', FALSE);
 ```
 
+Eliminar el perfil de IA creado, esto es útil para crear el perfil nuevamente.
 ```sql
 BEGIN
      DBMS_CLOUD_AI.DROP_PROFILE(profile_name => 'GENAI');
