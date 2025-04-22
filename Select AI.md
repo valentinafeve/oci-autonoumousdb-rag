@@ -16,6 +16,10 @@ END;
 
 ## 2. Vamos a crear el perfil de IA 
 
+Algunos links útiles 
+
+[Obtener mi compartment](https://cloud.oracle.com/identity/compartments?region=null)
+[Obtener mi región](https://cloud.oracle.com/regions)
 
 
 ```sql
