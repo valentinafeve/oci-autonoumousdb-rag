@@ -1,6 +1,8 @@
 ## 1. Vamos a crear las credenciales 
 
-Es necesario crear las credenciales utilizando el paquete DBMS_CLOUD y la función CREATE_CREDENTIAL
+Es necesario crear las credenciales utilizando el paquete DBMS_CLOUD y la función CREATE_CREDENTIAL.
+Esto nos permite dar a la base de datos los permisos de utilizar algunos recursos de nuestro compartment.
+
 
 ```sql
 BEGIN
@@ -14,7 +16,9 @@ DBMS_CLOUD.CREATE_CREDENTIAL(
 END;
 ```
 
-## 2. Vamos a crear el perfil de IA 
+## 2. Vamos a crear el perfil de IA
+
+Esto nos permite indicarle a la base de datos cuál modelo de IA utilizar, además nos permite especificar las tablas a las que se tendrán acceso.
 
 Algunos links útiles para el siguiente comando
 
@@ -36,6 +40,8 @@ BEGIN
        }');                                                                  
 END;                                                                                                          ```
 ```
+
+## Preguntemos a la base de datos
 
 Vamos a realizar pruebas utilizando narrate, aunque es posible con _explainsql_, _showsql_, _runsql_.
 
