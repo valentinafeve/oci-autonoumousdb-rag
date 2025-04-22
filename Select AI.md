@@ -37,6 +37,7 @@ BEGIN
 END;                                                                                                          ```
 ```
 
+Vamos a realizar pruebas utilizando narrate, aunque es posible con _explainsql_, _showsql_, _runsql_.
 
 ```sql
 SELECT DBMS_CLOUD_AI.GENERATE(prompt => 'quién es el mejor jugador?',
